@@ -1,0 +1,312 @@
+/* Modern Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #1a3c34; /* Deep Forest Green */
+    --accent-color: #c5a065; /* Gold/Bronze */
+    --bg-color: #fcfbf9; /* Warm White */
+    --bg-light: #f3f0eb; /* Beige */
+    --text-color: #2d2d2d;
+    --text-light: #666;
+    --white: #ffffff;
+    
+    --font-heading: 'Lora', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Typography Utilities */
+.text-center { text-align: center; }
+.max-w-600 { max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-text {
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 1.5rem;
+}
+
+.btn-text:hover {
+    color: var(--accent-color);
+}
+
+/* Navbar */
+.navbar {
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    background-color: rgba(252, 251, 249, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Mobile menu simplified for now */
+}
+
+/* Hero */
+.hero {
+    padding: 8rem 0;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .hero { padding: 4rem 0; }
+    .hero h1 { font-size: 2.5rem; }
+}
+
+/* Sections */
+.section {
+    padding: 6rem 0;
+}
+
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.divider {
+    height: 3px;
+    width: 60px;
+    background-color: var(--accent-color);
+    margin: 1rem 0 2rem 0;
+}
+
+.divider.center { margin: 1rem auto 2rem auto; }
+
+.bg-light { background-color: var(--bg-light); }
+
+/* About */
+.about-image-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background-color: #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+}
+
+/* Book Section */
+.book-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.book-section h2, .book-section p, .book-section blockquote {
+    color: var(--white);
+    border-left-color: var(--accent-color);
+}
+
+.book-section .tag {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.book-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    margin-top: 0.5rem;
+}
+
+blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    line-height: 1.6;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.book-cover-placeholder {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 2/3;
+    background-color: var(--bg-light);
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+/* Philosophy Cards */
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+    color: var(--text-light);
+}
